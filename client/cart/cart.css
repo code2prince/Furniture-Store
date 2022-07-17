@@ -1,0 +1,39 @@
+html {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  * {
+    color: #414141;
+  }
+  .header {
+    background-color: rgb(226, 198, 15);
+  }
+  .header-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  
+  .website-menu .menu {
+    float: right;
+  }
+  
+  .product-menu li {
+    font-size: 18px;
+    color: red;
+  }
+  
+  .center {
+    text-align: center;
+  }
