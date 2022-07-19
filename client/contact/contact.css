@@ -7,10 +7,14 @@ html {
   }
   .header {
     background-color: rgb(226, 198, 15);
+    position:sticky;
+    top:0;
+    left:0;
+
   }
   .header-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     justify-content: space-between;
   }
   
@@ -23,6 +27,13 @@ html {
   .menu li {
     display: inline-block;
     padding: 5px 10px;
+  }
+  .menu li a{
+    text-decoration:none ;
+    transition: 0.3s;
+  }
+  .menu li a:hover{
+    color:aqua;
   }
   
   .website-menu .menu {
@@ -42,4 +53,13 @@ html {
     grid-template-columns: 60px 300px;
     grid-gap:10px;
   }
-  
+  .scroll{
+    background-color: greenyellow;
+    color:aliceblue;
+    padding: 10px 10px;
+    
+  }
+  button{
+    background-color: yellow;
+    cursor: pointer;
+  }

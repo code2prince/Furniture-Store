@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Contact Us</title>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="contact.css" />
     
@@ -14,12 +15,20 @@
     <header class="header">
         <div class="header-grid">
           <div class="logo">
-            <img src="../image/logo.png" width="80px" />
+            <img src="../image/logofurniture.webp" width="80px" />
           </div>
+          <div><h3>A to Z Furniture</h3></div>
+          <div>
+              <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+          </div>
+          
           <div class="website-menu">
             <div>
               <ul class="menu">
-                <li><a href="../furnitureIndex.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+          
                 <li><a href="../about/about.html">About</a></li>
                 
                 <li>facebook</li>
@@ -34,10 +43,12 @@
             </div>
             <div class="product-menu">
               <ul class="menu">
+                <li><a href="../furnitureIndex.html"><i class="fa fa-home" aria-hidden="true"></i></a></li>
                 <li><a href="../product/product.html">Products</a></li>
                 <li>Bedroom</li>
                 <li>Study</li>
                 <li>Living room</li>
+                
                 <li>
                   <a
                     href="https://www.facebook.com/uidevcommunity"
@@ -50,8 +61,16 @@
           </div>
         </div>
       </header>
+      <div class="scroll">
+        <marquee>
+          WELCOME TO WOODEN FURNITURE WORLD &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; We are Provoiding all types of Wooden
+          Furnitures {BuyNow} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Fast & Free Delivery to your Doop-Step
+        </marquee>
+      </div>
+
     <div class="address-details">
         <h3> Office Address:</h3>
+        <h4>A to Z Furniture</h4>
         <p> Siwan (841436),BIHAR </p>
         <p>Mobile no. 8873091666 ,9801215638</p>
     </div>
@@ -63,9 +82,12 @@
     <div class="input-row">Phone: <input id="phone" type="text" /></div>
     <div class="input-row">Query: <textarea id="query" ></textarea></div> 
     
-    
-    
-    <button onclick="submitForm()">Submit</button>
+    <div class="input-row">
+      <div></div>
+      <div>
+        <button onclick="submitForm()">Submit</button>
+      </div>
+    </div>
     <script src="contact.js"></script>
 </body>
 </html>

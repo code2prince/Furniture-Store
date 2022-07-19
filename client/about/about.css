@@ -7,6 +7,10 @@ html {
   }
   .header {
     background-color: rgb(226, 198, 15);
+    position:sticky;
+    top:0;
+    left:0;
+    
   }
   .header-grid {
     display: grid;
@@ -24,6 +28,13 @@ html {
     display: inline-block;
     padding: 5px 10px;
   }
+  .menu li a{
+    text-decoration:none ;
+    transition: 0.3s;
+  }
+  .menu li a:hover{
+    color:aqua;
+  }
   
   .website-menu .menu {
     float: right;
@@ -31,7 +42,7 @@ html {
   
   .product-menu li {
     font-size: 18px;
-    color: red;
+    color: rgb(0, 68, 255);
   }
   
   .center {

@@ -6,11 +6,14 @@ html {
     color: #414141;
   }
   .header {
-    background-color: rgb(226, 198, 15);
+    background-color: rgb(40, 175, 162);
+    position:sticky;
+    top:0;
+    left:0;
   }
   .header-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     justify-content: space-between;
   }
   
@@ -24,6 +27,13 @@ html {
     display: inline-block;
     padding: 5px 10px;
   }
+  .menu li a{
+    text-decoration:none ;
+    transition: 0.3s;
+  }
+  .menu li a:hover{
+    color:aqua;
+  }
   
   .website-menu .menu {
     float: right;
@@ -31,9 +41,16 @@ html {
   
   .product-menu li {
     font-size: 18px;
-    color: red;
+    color: rgb(0, 51, 255);
   }
   
   .center {
     text-align: center;
   }
+ 
+  .scroll{
+    background-color: yellowgreen;
+    color: #ffffff;
+    padding: 10px 10px;
+}
+

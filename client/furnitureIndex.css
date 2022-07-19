@@ -13,7 +13,7 @@ html {
   }
   .header-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     justify-content: space-between;
   }
   
@@ -76,5 +76,35 @@ html {
     background-color: yellowgreen;
     color: #ffffff;
     padding: 10px 10px;
+}
+.d-flex{
+  margin-top: 17px;
+  margin-left: 50px;
+}
+.title-name{
+  margin-top: 15px;
+  margin-right: 100px;
+}
+.footer{
+  background-color: #212529;
+  color: azure;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #ffffff;
+ 
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+  color: #ff00b3;
+}
+.footer-menu{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: space-between;
+  padding: 30px 20px;
+  align-items: center;
 }
 
