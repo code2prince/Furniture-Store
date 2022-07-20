@@ -1,6 +1,11 @@
 (function getCart() {
+    // current implementation
     const strigifiedCard = sessionStorage.getItem('cart');
     const cart = JSON.parse(strigifiedCard);
+
+
+    //real implementation
+    // >>>>  call /getcart api to get the cart data
 
     console.log('Cart ', cart);
     displayCart(cart);
