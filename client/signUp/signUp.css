@@ -1,0 +1,113 @@
+html {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  * {
+    color: #414141;
+  }
+  .header {
+    background-color: rgb(226, 198, 15);
+    position:sticky;
+    top:0;
+    left:0;
+  }
+  .header-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline-block;
+    padding: 5px 10px;
+  }
+  .menu li a{
+    text-decoration:none ;
+    transition: 0.3s;
+  }
+  .menu li a:hover{
+    color:aqua;
+  }
+  .website-menu .menu {
+    float: right;
+  }
+  
+  .product-menu li {
+    font-size: 18px;
+    color: red;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .old-price {
+    color: #666;
+    text-decoration: line-through;
+  }
+  
+  .grid-sixty-fourty {
+    display: grid;
+    grid-template-columns:60% 40%;
+  }
+  
+  .grid-fourty-sixty {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+  
+  .text-container {
+    background-color: #f1f1f1;
+    padding: 10px 10px 10px 25px;
+  }
+  
+  .divider {
+    border: 1px solid #cdcdcd;
+    margin: 30px;
+  }
+
+
+.d-flex{
+    margin-top: 17px;
+    margin-left: 50px;
+}
+.title-name{
+    margin-top: 15px;
+    margin-right: 100px;
+}
+
+
+.scroll{
+        background-color: yellowgreen;
+        color: #ffffff;
+        padding: 5px 10px;
+}
+.btn{
+    color: #212529;
+    background-color: #ffea07;
+    display:grid;
+    grid-template-columns: 100px auto;
+    margin: 2px;
+    text-align: center;
+
+}
+.register-container {
+    width: 450px;
+    border: 1px solid #cdcdcd;
+    padding: 20px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px #bbb;
+    background-color:rgb(115, 205, 55);
+}
+.input-grid{
+    display: grid;
+    grid-template-columns: 135px auto;
+    margin-bottom: 10px;
+}
