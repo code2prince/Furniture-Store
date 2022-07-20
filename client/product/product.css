@@ -69,8 +69,7 @@ html {
   }
   
   .prod-detail div {
-      display:flex;
-    justify-content: center; 
+    text-align: center;
 
   }
     
@@ -110,15 +109,16 @@ html {
   
   .product-list-grid > .product-item {
     border: 1px solid #cdcdcd;
-    min-height: 100px;
+    position: relative;
     
   }
-  
+
   .product-item:hover {
     box-shadow: 1px 2px 3px #999;
   } 
   .bed img{
-      width: 355px;
+    width: 100%;
+    height: 200px;
   }
   .chair img{
       width:300px;
@@ -185,9 +185,4 @@ html {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-.apply-btn{
-    position:absolute;
-    text-decoration: none;
-    
 }
