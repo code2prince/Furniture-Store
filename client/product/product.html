@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Product</title>
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"  crossorigin="anonymous"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="product.css" />
 </head>
@@ -18,21 +18,23 @@
             <div class="logo">
                 <img src="../image/logofurniture.webp" width="80px" />
             </div>
-            <div><h3>A to Z Furniture</h3></div>
+            <div>
+                <h3>A to Z Furniture</h3>
+            </div>
             <div>
                 <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search items" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Search items" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
             <div class="website-menu">
                 <div>
                     <ul class="menu">
-                        <li><a href="../furnitureIndex.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+                        <li><a href="../index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
 
 
-                        
-                        
+
+
 
                         <li><a href="../about/about.html">About</a></li>
                         <li><a href="../contact/contact.html">Contact</a></li>
@@ -44,14 +46,14 @@
                 </div>
                 <div class="product-menu">
                     <ul class="menu">
-                
-                       
+
+
                         <li><a href="../beds/beds.html"><i class="fa fa-bed" aria-hidden="true"></i>Beds</a></li>
                         <li><a href="../chair/chair.html"><i class="fa-solid fa-chair"></i>Chairs</a></li>
                         <li>Study</li>
                         <li>Living room</li>
                         <li><a href="../cart/cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i>Cart</a></li>
-                        
+
 
                         <li>
                             <a href="https://www.facebook.com/uidevcommunity" target="_blank" title="facebook"></a>
@@ -63,12 +65,13 @@
     </header>
     <div class="scroll">
         <marquee>
-            WELCOME TO WOODEN FURNITURE WORLD &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; We are Provoiding all types of Wooden Furnitures  {BuyNow} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Fast & Free Delivery to your Doop-Step
+            WELCOME TO WOODEN FURNITURE WORLD &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; We are Provoiding all types of
+            Wooden Furnitures {BuyNow} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Fast & Free Delivery to your Doop-Step
         </marquee>
     </div>
 
     <div class="product-list-grid">
-   
+
         <div class="product-item">
             <div class="prod-img">
                 <div class="bed">
@@ -86,13 +89,19 @@
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                 </div>
-                <div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+               
+                <div class="buy-cart">
+                    <div></div>
+                    <div>
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i id="add2card1" class="fa fa-cart-plus" onclick="add2cart('Wooden Royal KING SIZE BED', 100001)"
+                            aria-hidden="true"></i>
+                    </div>
+    
                 </div>
-                <div>
-                    <i id="add2card1" class="fa fa-cart-plus" onclick="add2cart('Wooden Royal KING SIZE BED', 100001)" aria-hidden="true"></i>
-                </div>
-                
+               
             </div>
         </div>
 
@@ -107,10 +116,18 @@
                 <div><span class="original-price">&#8377; 59,999</span></div>
                 <div><span>Discount Price: &#8377; 45,999</span></div>
                 <div>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
+                <div>
                     <a class="btn apply-btn" href="#">Buy-Now</a>
                 </div>
                 <div>
-                    <i  class="fa fa-cart-plus" onclick="add2cart('Wooden Royal Queen SIZE BED', 100002)" aria-hidden="true"></i>
+                    <i class="fa fa-cart-plus" onclick="add2cart('Wooden Royal Queen SIZE BED', 100002)"
+                        aria-hidden="true"></i>
                 </div>
             </div>
         </div>
@@ -126,11 +143,18 @@
                     <div><a href="#"> Queen SIZE BED </h4></a></div>
                     <div><span class="original-price">&#8377; 29,999</span></div>
                     <div><span>Discount Price: &#8377; 19,999</span></div>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                     <div class="buy-btn-wrapper">
                         <a class="btn apply-btn" href="#">Buy-Now</a>
                     </div>
                     <div>
-                        <i  class="fa fa-cart-plus" onclick="add2cart(' Queen SIZE BED', 100003)" aria-hidden="true"></i>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Queen SIZE BED', 100003)" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -147,13 +171,23 @@
                 <div><a href="#"> Royal KING SIZE BED </h4></a></div>
                 <div><span class="original-price">&#8377; 39,999</span></div>
                 <div><span>Discount Price: &#8377; 25,999</span></div>
+                <div>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                </div>
                 <div class="buy-btn-wrapper">
                     <a class="btn apply-btn" href="#">Buy-Now</a>
+                </div>
+                <div>
+                    <i class="fa fa-cart-plus" onclick="add2cart(' Royal king SIZE BED', 100004)" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
 
-        
+
 
         <div class="product-item">
             <div class="prod-img">
@@ -165,8 +199,18 @@
                     <div><a href="#"> Royal king Chair </h4></a></div>
                     <div><span class="original-price">&#8377; 9,999</span></div>
                     <div><span>Discount Price: &#8377; 6,999</span></div>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                     <div class="buy-btn-wrapper">
                         <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Royal king Chair', 200001)" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -182,8 +226,18 @@
                     <div><a href="#"> Relaxing Chair </h4></a></div>
                     <div><span class="original-price">&#8377; 7,999</span></div>
                     <div><span>Discount Price: &#8377; 4,999</span></div>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                     <div class="buy-btn-wrapper">
                         <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Relaxing Chair', 200002)" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -192,16 +246,26 @@
 
         <div class="product-item">
             <div class="prod-img">
-                <div class="chair4">
-                    <img src="../image/chair4.webp" />
+                <div class="chaircombo">
+                    <img src="../image/chairCombo.jpg" />
                 </div>
 
                 <div class="prod-detail">
-                    <div><a href="#"> White Classic Chair </h4></a></div>
-                    <div><span class="original-price">&#8377; 4,999</span></div>
-                    <div><span>Discount Price: &#8377; 2,999</span></div>
+                    <div><a href="#"> Classic Chair Combo  </h4></a></div>
+                    <div><span class="original-price">&#8377; 7,999</span></div>
+                    <div><span>Discount Price: &#8377; 4,999</span></div>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
                     <div class="buy-btn-wrapper">
                         <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' White Classic Chair', 200003)" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
@@ -218,7 +282,19 @@
                     <div><a href="#"> Wooden chair </h4></a></div>
                     <div><span class="original-price">&#8377; 2,999</span></div>
                     <div><span>Discount Price: &#8377; 1,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Wooden chair', 200004)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -235,7 +311,19 @@
                     <div><a href="#"> Dinning Table 4 seater </h4></a></div>
                     <div><span class="original-price">&#8377; 19,999</span></div>
                     <div><span>Discount Price: &#8377; 12,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Dinning Table 4 seater ', 300001)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,7 +339,19 @@
                     <div><a href="#"> Dinning Oval Table 4 seater Classic </h4></a></div>
                     <div><span class="original-price">&#8377; 29,999</span></div>
                     <div><span>Discount Price: &#8377; 19,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Dinning Oval Table 4 seater Classic', 300002)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,7 +366,19 @@
                     <div><a href="#"> Royal Dinning Round Table 4 seater </h4></a></div>
                     <div><span class="original-price">&#8377; 35,999</span></div>
                     <div><span>Discount Price: &#8377; 24,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Royal Dinning Round Table 4 seater', 300003)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -281,12 +393,24 @@
                     <div><a href="#">Big Dinning Table 6 seater </h4></a></div>
                     <div><span class="original-price">&#8377; 39,999</span></div>
                     <div><span>Discount Price: &#8377; 29,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Big Dinning Table 6 seater ', 300004)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
 
-        
+
 
         <div class="product-item">
             <div class="prod-img">
@@ -298,7 +422,19 @@
                     <div><a href="#">Dressing 6 Feet Size </h4></a></div>
                     <div><span class="original-price">&#8377; 11,999</span></div>
                     <div><span>Discount Price: &#8377; 6,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Dressing 6 Feet Size', 400001)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,10 +447,22 @@
                 </div>
 
                 <div class="prod-detail">
-                    <div><a href="#">Dressing  standard 6 Feet Size </h4></a></div>
+                    <div><a href="#">Dressing standard 6 Feet Size </h4></a></div>
                     <div><span class="original-price">&#8377; 9,999</span></div>
                     <div><span>Discount Price: &#8377; 5,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Dressing standard 6 Feet Size', 400002)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -329,7 +477,19 @@
                     <div><a href="#">Dressing 6 classic Feet Size </h4></a></div>
                     <div><span class="original-price">&#8377; 11,999</span></div>
                     <div><span>Discount Price: &#8377; 6,999</span></div>
-                    <a class="btn apply-btn" href="#">Buy-Now</a>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
+                        <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Dressing 6 classic Feet Size', 400003)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -344,12 +504,24 @@
                     <div><a href="#">Dressing stylist curve style</h4></a></div>
                     <div><span class="original-price">&#8377; 12,999</span></div>
                     <div><span>Discount Price: &#8377; 7,999</span></div>
+                    <div>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="buy-btn-wrapper">
                         <a class="btn apply-btn" href="#">Buy-Now</a>
+                    </div>
+                    <div>
+                        <i class="fa fa-cart-plus" onclick="add2cart(' Dressing stylist curve style', 400004)" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
 
-       
+
         <div class="product-item"></div>
         <div class="product-item"></div>
 
@@ -371,7 +543,7 @@
 
 
 
-
+    <!-- 
     <div class="divider"></div>
     <h3>Furniture</h3>
     <div class="content">
@@ -472,7 +644,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <script src="product.js"></script>
 </body>
 
