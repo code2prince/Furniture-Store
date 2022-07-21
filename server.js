@@ -15,6 +15,10 @@ app.use(express.static(path.join(__dirname, 'client')))
 
     const cart = [];
 
+    app.get('/getCart',(request, response)=>{
+      
+        response.send(cart);
+    });
 
     app.post('/addToCart', (request, response) =>{
         const cartItem = request.body;
@@ -24,24 +28,8 @@ app.use(express.static(path.join(__dirname, 'client')))
         
     });
 
-    app.post('/getCart',(request, response)=>{
-      
-        response.send(cart);
-    });
-
     
-    // app.get('/getCart',(request, response)=>{
-      
-    //     response.send(cart);
-    // });
 
-    // app.post('/getCart',(request, response)=>{
-    //     const carts=request.body;
-    //     cart.push(carts);
-      
-    //     response.send(cart);
-    // });
-    
 
 app.listen(4000,function(){
         console.log('Server is running on port 4000')
