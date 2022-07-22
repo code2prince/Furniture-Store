@@ -54,3 +54,10 @@ html {
     padding: 10px 10px;
 }
 
+.cart-frame{
+  display: flex;
+  justify-content:flex-start;
+}
+.imgcart img{
+  width: 250px;
+}
