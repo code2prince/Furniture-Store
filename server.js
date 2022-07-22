@@ -25,10 +25,25 @@ app.use(express.static(path.join(__dirname, 'client')))
 
         cart.push(cartItem);
         response.send({msg: 'Item added to cart'});
-        
+        });
+
+
+    app.delete('/cartDelete',(request,response)=>{
+        //const name=request.body.name;
+        const name=request.body;
+       // const newCart=cart.filter((x)=>x.newCart=name);
+       var found=cart.find(x=>(x.name===name))
+       if(found.length>0){
+        response.send(found[0])
+       }
+       else{
+        response.send('not found similar')
+       }
+    //     cart=newCart;
+    //     response.send({msg: 'Item removed to cart'});
+    //    }
     });
 
-    
 
 
 app.listen(4000,function(){
