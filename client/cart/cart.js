@@ -2,29 +2,32 @@ function getkart() {
     fetch("http://localhost:4000/getCart")
         .then(response => response.json())
         .then(result => {
+            debugger;
             displayCart(result)
         });
 
 }
 
 function displayCart(cart) {
+    const cartParentDiv = document.getElementById('cart-items');
+    cartParentDiv.innerHTML = '';
 
     cart.forEach(item => {
-        const div = document.createElement('div');
-        const h1 = document.createElement('h1');
-        const h2=document.createElement('h2');
-        const h3=document.createElement('h3');
+            const div = document.createElement('div');
+            const h1 = document.createElement('h1');
+            const h2 = document.createElement('h2');
+            const h3 = document.createElement('h3');
 
-        var deletebtn =  document.createElement('button');
-        deletebtn.setAttribute('data-id', cart.name);
+        var deletebtn = document.createElement('button');
+        deletebtn.setAttribute('data-id', item.id);
         deletebtn.innerText = 'Remove-Item';
         deletebtn.onclick = deleteItemFromCart;
-        
-       // const id=document.createElement('id')
+
+        // const id=document.createElement('id')
 
         h1.innerText = item.productName;
-        h2.innerText=item.id;
-        h3.innerText=item.price;
+        h2.innerText = item.id;
+        h3.innerText = item.price;
         div.append(h1);
         div.append(h2);
         div.append(h3);
@@ -32,28 +35,36 @@ function displayCart(cart) {
         // id.innerText=item.id;
         // div.append(id);
 
-        const cartParentDiv = document.getElementById('cart-items');
+        
         cartParentDiv.appendChild(div);
     });
 
-       
+
 
 }
 
-function deleteItemFromCart(name){
-    const id={
-        name:name,
+
+
+function deleteItemFromCart(e) {
+    const id = {id : e.target.dataset.id};
+
+    const requestObject = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(id)
     };
-    const requestObject={
-        method:'DELETE',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(id)
-   };
-   const productPromise= fetch('http://localhost:4000/cartDelete',requestObject)
-   productPromise.then(response=> response.json()).then(result=>
-    console.log('after delete call success , delete cart data from server',result));
-    //alert(result.msg);
-    };
-    deleteItemFromCart(name);
+    const productPromise = fetch('http://localhost:4000/cartDelete', requestObject)
+    productPromise
+    .then(response => response.json())
+    .then(result =>{
+        // success
+        console.log(result);
+        debugger;
+        getkart();
+    });
+
+        
+};
+
 
 getkart();

@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'client')))
 
 
 
-    const cart = [];
+    let cart = [];
 
     app.get('/getCart',(request, response)=>{
       
@@ -29,22 +29,13 @@ app.use(express.static(path.join(__dirname, 'client')))
 
 
     app.delete('/cartDelete',(request,response)=>{
-        //const name=request.body.name;
-        const name=request.body;
-       // const newCart=cart.filter((x)=>x.newCart=name);
+        // const name=request.body; 
+        console.log("request.body", request.body);
 
-
-       //var found=cart.find(x=>(x.name===name))
-        var found =cart.find(c=> c.name===parseInt(req.params.name));
-       if(found.length>0){
-        response.send(found[0])
-       }
-       else{
-        response.send('not found similar')
-       }
-    //     cart=newCart;
-    //     response.send({msg: 'Item removed to cart'});
-    //    }
+        const filteredCard = cart.filter(c => c.id !== parseInt(request.body.id));
+       console.log('filteredCard ', filteredCard);
+        cart = filteredCard;
+        response.send({msg: 'Item deleted'});
     });
 
 

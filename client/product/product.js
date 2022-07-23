@@ -6,7 +6,7 @@
 // const cart = cartFromSession.length > 0 ? cartFromSession : [];
 
 function add2cart(name, id,price) {  
-    debugger;
+    
     const item = {
         id: id,
         productName: name,
