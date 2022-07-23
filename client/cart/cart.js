@@ -14,6 +14,12 @@ function displayCart(cart) {
         const h1 = document.createElement('h1');
         const h2=document.createElement('h2');
         const h3=document.createElement('h3');
+
+        var deletebtn =  document.createElement('button');
+        deletebtn.setAttribute('data-id', cart.name);
+        deletebtn.innerText = 'Remove-Item';
+        deletebtn.onclick = deleteItemFromCart;
+        
        // const id=document.createElement('id')
 
         h1.innerText = item.productName;
@@ -22,12 +28,16 @@ function displayCart(cart) {
         div.append(h1);
         div.append(h2);
         div.append(h3);
+        div.append(deletebtn);
         // id.innerText=item.id;
         // div.append(id);
 
         const cartParentDiv = document.getElementById('cart-items');
         cartParentDiv.appendChild(div);
     });
+
+       
+
 }
 
 function deleteItemFromCart(name){
