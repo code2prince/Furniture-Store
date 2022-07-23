@@ -32,7 +32,10 @@ app.use(express.static(path.join(__dirname, 'client')))
         //const name=request.body.name;
         const name=request.body;
        // const newCart=cart.filter((x)=>x.newCart=name);
-       var found=cart.find(x=>(x.name===name))
+
+
+       //var found=cart.find(x=>(x.name===name))
+        var found =cart.find(c=> c.name===parseInt(req.params.name));
        if(found.length>0){
         response.send(found[0])
        }
