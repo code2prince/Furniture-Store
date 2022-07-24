@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const path = require('path');
 //const { send } = require('process');
@@ -12,6 +13,31 @@ app.use(express.static(path.join(__dirname, 'client')))
     .get('/', (request, response) => response.render('index.html'));
 
 
+    const productList=[
+        {
+            id:1,
+            name:'wooden bed',
+            price: 39999,
+            image:'bed4.webp'
+        },
+        {
+            id:2,
+            name:' king wooden bed ',
+            price: 49999,
+            image:'bed3.webp'
+        },
+    ];
+
+    app.get('/getProductList:',(request,response)=>{
+        response.send(productList);
+    });
+
+    app.post('/gettingProduct',(request,response)=>{
+        const product=request.body;
+        console.log(productList.length);
+        productList.push(product);
+        response.send({msg:'product added successfully'})
+    });
 
     let cart = [];
 
@@ -27,6 +53,8 @@ app.use(express.static(path.join(__dirname, 'client')))
         response.send({msg: 'Item added to cart'});
         });
 
+    
+        // delete cart items
 
     app.delete('/cartDelete',(request,response)=>{
         // const name=request.body; 
@@ -37,6 +65,8 @@ app.use(express.static(path.join(__dirname, 'client')))
         cart = filteredCard;
         response.send({msg: 'Item deleted'});
     });
+
+
 
 
 
