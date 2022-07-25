@@ -108,12 +108,26 @@ function displayProducts(productList) {
         iconDiv.appendChild(iconTag4);
         iconDiv.appendChild(iconTag5);
 
+        const byNowDiv = document.createElement('div');
+        const buyNowBtn = document.createElement('a');
+        buyNowBtn.setAttribute('class', 'btn apply-btn');
+        buyNowBtn.setAttribute('data-id', productitem.id);
+        buyNowBtn.setAttribute('data-name', productitem.name);
+        buyNowBtn.setAttribute('data-price', productitem.price);
+        buyNowBtn.setAttribute('data-image', productitem.image);
+        buyNowBtn.innerText = "Buy-Now";
+        buyNowBtn.onclick = add2cart;
+        byNowDiv.appendChild(buyNowBtn);
 
+        
         /**/
         // create div block and append to product-detail
         /**/
 
+
+
         prodDetail.appendChild(iconDiv);
+        prodDetail.appendChild(byNowDiv)
         productItem.appendChild(prodDetail);
 
 
@@ -161,12 +175,18 @@ getProduct();
 
 
 
-function add2cart(name, id, price) {
+function add2cart(e) {
+
+    const id = e.target.dataset.id;
+    const name = e.target.dataset.name;
+    const price = e.target.dataset.price ;
+    const img =  e.target.dataset.image ;
 
     const item = {
         id: id,
         productName: name,
         price: price,
+        img: img
     };
 
     //     cart.push(item);

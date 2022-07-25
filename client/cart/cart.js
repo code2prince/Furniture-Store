@@ -17,6 +17,10 @@ function displayCart(cart) {
             const h1 = document.createElement('h1');
             const h2 = document.createElement('h2');
             const h3 = document.createElement('h3');
+            const img = document.createElement('img');
+            img.src = `../image/${item.img}`;
+
+            cartParentDiv.appendChild(img);
 
         var deletebtn = document.createElement('button');
         deletebtn.setAttribute('data-id', item.id);
