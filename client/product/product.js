@@ -54,20 +54,73 @@ function displayProducts(productList) {
     whereToDisplayItem.innerHTML = '';
 
     productList.forEach(productitem => {
-        const div = document.createElement('div');
-        const h1 = document.createElement('h1');
-        const h2 = document.createElement('h2');
-        const h3 = document.createElement('h3');
+        
+        const productItem = document.createElement('div');
+        productItem.setAttribute('class', 'product-item');
+
+        const prodImg = document.createElement('div');
+        prodImg.setAttribute('class', 'prod-img');
+        const bed = document.createElement('div');
+        bed.setAttribute('class', 'bed');
+        const img = document.createElement('img');
+        img.src=`../image/${productitem.image}`;
+        bed.appendChild(img);
+        prodImg.appendChild(bed);
+        productItem.appendChild(prodImg)
 
 
-        h1.innerText = productitem.productName;
-        h2.innerText = productitem.id;
-        h3.innerText = productitem.price;
-        div.append(h1);
-        div.append(h2);
-        div.append(h3);
+        const prodDetail = document.createElement('div');
+        prodImg.setAttribute('class', 'prod-detail');
 
-        whereToDisplayItem.appendChild(div);
+        const linkWrapper = document.createElement('div');
+        const span = document.createElement('span');
+        span.innerText = productitem.name;
+        linkWrapper.appendChild(span);
+        prodDetail.appendChild(linkWrapper);
+
+        const originalPriceDiv = document.createElement('div');
+        const originalPriceSpan = document.createElement('span');
+        originalPriceSpan.setAttribute('class', 'original-price');
+        originalPriceDiv.appendChild(originalPriceSpan);
+        prodDetail.appendChild(originalPriceDiv)
+
+        const discountPriceDiv = document.createElement('div');
+        const discountPriceSpan = document.createElement('span');
+        discountPriceDiv.appendChild(discountPriceSpan);
+        prodDetail.appendChild(discountPriceDiv)
+
+        const iconDiv = document.createElement('div');
+    
+        const iconTag1 = document.createElement('i');
+        iconTag1.setAttribute('class', 'fa fa-star');
+        const iconTag2 = document.createElement('i');
+        iconTag2.setAttribute('class', 'fa fa-star');
+        const iconTag3 = document.createElement('i');
+        iconTag3.setAttribute('class', 'fa fa-star');
+        const iconTag4 = document.createElement('i');
+        iconTag4.setAttribute('class', 'fa fa-star');
+        const iconTag5 = document.createElement('i');
+        iconTag5.setAttribute('class', 'fa fa-star');
+
+        iconDiv.appendChild(iconTag1);
+        iconDiv.appendChild(iconTag2);
+        iconDiv.appendChild(iconTag3);
+        iconDiv.appendChild(iconTag4);
+        iconDiv.appendChild(iconTag5);
+
+
+        /**/
+        // create div block and append to product-detail
+        /**/
+
+        prodDetail.appendChild(iconDiv);
+        productItem.appendChild(prodDetail);
+
+
+       
+        
+
+        whereToDisplayItem.appendChild(productItem);
     });
 
     //     for(var i=0; i<productList.length;i++){

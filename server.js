@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'client')))
         },
     ];
 
-    app.get('/getProductList:',(request,response)=>{
+    app.get('/getProductList',(request,response)=>{
         response.send(productList);
         
     });
