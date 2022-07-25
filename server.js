@@ -15,21 +15,22 @@ app.use(express.static(path.join(__dirname, 'client')))
 
     const productList=[
         {
-            id:1,
+            id:'1',
             name:'wooden bed',
-            price: 39999,
-            image:'bed4.webp'
+            price: '39999',
+            image:'bed4.webp',
         },
         {
-            id:2,
+            id:'2',
             name:' king wooden bed ',
-            price: 49999,
-            image:'bed3.webp'
+            price: '49999',
+            image:'bed3.webp',
         },
     ];
 
     app.get('/getProductList:',(request,response)=>{
         response.send(productList);
+        
     });
 
     app.post('/gettingProduct',(request,response)=>{
