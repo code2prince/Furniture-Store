@@ -115,19 +115,31 @@ function displayProducts(productList) {
         iconDiv.appendChild(iconTag5);
 
         // icon cart 
+        
+        
         const iconDivCart=document.createElement('div');
+        const iconCartSpan=document.createElement('span');
+        
+        iconCartSpan.setAttribute('data-id',productitem.id);
+        iconCartSpan.setAttribute('data-name',productitem.name);
+        iconCartSpan.setAttribute('data-price',productitem.price);
+        iconCartSpan.setAttribute('data-image',productitem.image);
 
         const iconCart=document.createElement('i');
         iconCart.setAttribute('class', 'fa fa-cart-plus');
+        iconCartSpan.appendChild(iconCart)
 
-        
-        iconCart.setAttribute('data-id',productitem.id);
-        iconCart.setAttribute('data-name',productitem.name);
-        iconCart.setAttribute('data-price',productitem.price);
-        iconCart.setAttribute('data-image',productitem.image);
+        iconCartSpan.addEventListener('click', function() {
+            const item = {
+                id: productitem.id,
+                productName: productitem.name,
+                price: productitem.price,
+                img: productitem.image
+            };
+            sendDataToServer(item);
+        });
 
-        iconCart.onclick=add2cart;
-        iconDivCart.appendChild(iconCart);
+        iconDivCart.appendChild(iconCartSpan);
         
 
         const buyNowDiv = document.createElement('div');
@@ -138,7 +150,16 @@ function displayProducts(productList) {
         buyNowBtn.setAttribute('data-price', productitem.price);
         buyNowBtn.setAttribute('data-image', productitem.image);
         buyNowBtn.innerText = "Buy-Now";
-        buyNowBtn.onclick = add2cart;
+        buyNowBtn.addEventListener('click', function() {
+            const item = {
+                id: productitem.id,
+                productName: productitem.name,
+                price: productitem.price,
+                img: productitem.image
+            };
+            sendDataToServerAndRedirect(item);
+            // redirectToCartPage
+        });
         buyNowDiv.appendChild(buyNowBtn);
 
         /**/
@@ -146,7 +167,7 @@ function displayProducts(productList) {
         /**/
         prodDetail.appendChild(iconDiv);
         prodDetail.appendChild(buyNowDiv);
-        buyNowDiv.appendChild(iconCart);
+        buyNowDiv.appendChild(iconDivCart);
         productItem.appendChild(prodDetail);
 
         whereToDisplayItem.appendChild(productItem);
@@ -157,44 +178,30 @@ getProduct();
 
 
 
-function add2cart(e) {
-
-    const id = e.target.dataset.id;
-    const name = e.target.dataset.name;
-    const price = e.target.dataset.price ;
-    const img =  e.target.dataset.image ;
-
-    const item = {
-        id: id,
-        productName: name,
-        price: price,
-        img: img
-    };
-
-    //     cart.push(item);
-    //    console.log('Current cart items >>> ', cart);
-
-    //    // this is testing througn local Storage
-    //    const stringifiedCart = JSON.stringify(cart);
-    //    sessionStorage.setItem('cart', stringifiedCart);
-    //    alert(name +' added to cart');
 
 
-    // real implementation through server
-    // >>>>> call '/addtocart api and send cart data to server
-
+function sendDataToServer(item) {
     const requestObject = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(item)
     };
     const productPromise = fetch('http://localhost:4000/addToCart', requestObject)
-    productPromise.then(response => response.json()).then(result =>
-        console.log('after post call success ,send cart data to server', result));
-    alert(name + ' added to cart');
-
-
+    productPromise.then(response => response.json()).then(result =>{
+        alert(name + ' added to cart');
+    });
 }
 
-//add2cart(name,id);
+function sendDataToServerAndRedirect(item) {
+    const requestObject = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(item)
+    };
+    const productPromise = fetch('http://localhost:4000/addToCart', requestObject)
+    productPromise.then(response => response.json()).then(result =>{
+        alert(item.productName + ' added to cart');
+        window.location.href = window.location.origin+'/cart/cart.html';
+    });
+}
 

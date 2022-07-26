@@ -2,7 +2,6 @@ function getkart() {
     fetch("http://localhost:4000/getCart")
         .then(response => response.json())
         .then(result => {
-            debugger;
             displayCart(result)
         });
 

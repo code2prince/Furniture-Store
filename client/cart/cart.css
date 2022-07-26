@@ -61,3 +61,35 @@ html {
 .imgcart img{
   width: 100px;
 }
+
+.cart-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 20px;
+  border-bottom: 1px solid #cdcdcd;
+  margin: 10px 0 10px;
+}
+
+.cart-grid > div{
+  padding: 10px;
+}
+
+.cart-grid > img{
+  width: 100%;
+}
+
+.cart-item-name {
+  font-size: 1.53m;
+  padding: 0;
+  margin: 0;
+}
+
+.cart-item-price {
+  font-size: 1.2em;
+}
+
+.cart-item-d-price{
+  font-size: 1em;
+  color: #aaaaaa;
+  text-decoration: line-through;
+}
