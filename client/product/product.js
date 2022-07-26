@@ -21,6 +21,7 @@ function createProduct() {
         name: name,
         id: id,
         price: price,
+       // originalPrice: originalPrice,
     };
     const reqObject = {
         method: 'POST',
@@ -60,17 +61,20 @@ function displayProducts(productList) {
 
         const prodImg = document.createElement('div');
         prodImg.setAttribute('class', 'prod-img');
+
         const bed = document.createElement('div');
         bed.setAttribute('class', 'bed');
+
         const img = document.createElement('img');
         img.src=`../image/${productitem.image}`;
+
         bed.appendChild(img);
         prodImg.appendChild(bed);
-        productItem.appendChild(prodImg)
+        productItem.appendChild(prodImg);
 
 
         const prodDetail = document.createElement('div');
-        prodImg.setAttribute('class', 'prod-detail');
+        prodDetail.setAttribute('class', 'prod-detail');
 
         const linkWrapper = document.createElement('div');
         const span = document.createElement('span');
@@ -81,13 +85,15 @@ function displayProducts(productList) {
         const originalPriceDiv = document.createElement('div');
         const originalPriceSpan = document.createElement('span');
         originalPriceSpan.setAttribute('class', 'original-price');
+        originalPriceSpan.innerText=productitem.originalPrice;
         originalPriceDiv.appendChild(originalPriceSpan);
-        prodDetail.appendChild(originalPriceDiv)
+        prodDetail.appendChild(originalPriceDiv);
 
         const discountPriceDiv = document.createElement('div');
-        const discountPriceSpan = document.createElement('span');
+        const discountPriceSpan = document.createElement('span'); 
+        discountPriceSpan.innerText=productitem.price;
         discountPriceDiv.appendChild(discountPriceSpan);
-        prodDetail.appendChild(discountPriceDiv)
+        prodDetail.appendChild(discountPriceDiv);
 
         const iconDiv = document.createElement('div');
     
@@ -108,7 +114,23 @@ function displayProducts(productList) {
         iconDiv.appendChild(iconTag4);
         iconDiv.appendChild(iconTag5);
 
-        const byNowDiv = document.createElement('div');
+        // icon cart 
+        const iconDivCart=document.createElement('div');
+
+        const iconCart=document.createElement('i');
+        iconCart.setAttribute('class', 'fa fa-cart-plus');
+
+        
+        iconCart.setAttribute('data-id',productitem.id);
+        iconCart.setAttribute('data-name',productitem.name);
+        iconCart.setAttribute('data-price',productitem.price);
+        iconCart.setAttribute('data-image',productitem.image);
+
+        iconCart.onclick=add2cart;
+        iconDivCart.appendChild(iconCart);
+        
+
+        const buyNowDiv = document.createElement('div');
         const buyNowBtn = document.createElement('a');
         buyNowBtn.setAttribute('class', 'btn apply-btn');
         buyNowBtn.setAttribute('data-id', productitem.id);
@@ -117,60 +139,20 @@ function displayProducts(productList) {
         buyNowBtn.setAttribute('data-image', productitem.image);
         buyNowBtn.innerText = "Buy-Now";
         buyNowBtn.onclick = add2cart;
-        byNowDiv.appendChild(buyNowBtn);
+        buyNowDiv.appendChild(buyNowBtn);
 
-        
         /**/
         // create div block and append to product-detail
         /**/
-
-
-
         prodDetail.appendChild(iconDiv);
-        prodDetail.appendChild(byNowDiv)
+        prodDetail.appendChild(buyNowDiv);
+        buyNowDiv.appendChild(iconCart);
         productItem.appendChild(prodDetail);
-
-
-       
-        
 
         whereToDisplayItem.appendChild(productItem);
     });
-
-    //     for(var i=0; i<productList.length;i++){
-    //         var id=document.createElement('div');
-    //         id.innerText=productList[i].id;  
-
-    //         var name=document.createElement('div');
-    //         name.innerText=productList[i].name;  
-
-    //         var price=document.createElement('div');
-    //         price.innerText=productList[i].price;  
-
-    //         // var image=document.createElement('div');
-    //         // image.innerText=productList[i].image;  
-
-    //         var productDiv=document.createElement('div');
-    //         productDiv.setAttribute('id', 'product-list-container');
-
-    //         productDiv.appendChild(id);
-    //         productDiv.appendChild(name);
-    //         productDiv.appendChild(price);
-    //         // productDiv.appendChild(image);
-
-
-    //     whereToDisplayItem.appendChild(productDiv);
-    // }
-
 }
 getProduct();
-// createProduct();
-
-
-
-
-
-
 
 
 
@@ -209,7 +191,7 @@ function add2cart(e) {
     const productPromise = fetch('http://localhost:4000/addToCart', requestObject)
     productPromise.then(response => response.json()).then(result =>
         console.log('after post call success ,send cart data to server', result));
-    alert(name + 'added to cart');
+    alert(name + ' added to cart');
 
 
 }
