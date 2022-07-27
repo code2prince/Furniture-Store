@@ -12,11 +12,30 @@ function displayCart(cart) {
     cartParentDiv.innerHTML = '';
 
     cart.forEach(item => {
-        const cartGrid=document.createElement('div');
+
+      
+    //    const h1 = document.createElement('h1');
+    //    h1.setAttribute('class','product-name');
+    //    h1.innerText=item.productName;
+
+    //    cartParentDiv.appendChild(h1); 
+       
+    //    const priceDiv=document.createElement('div');
+    //    priceDiv.setAttribute('class','price');
+    //    priceDiv.innerText=item.price;
+
+    //    cartParentDiv.appendChild(priceDiv);
+
+    //    const img = document.createElement('img');
+    //    img.setAttribute('class','product-img');
+    //     img.src=`../image/${item.img}`;
+    //     cartParentDiv.appendChild(img);
+
+       const cartGrid=document.createElement('div');
         cartGrid.setAttribute('class','cart-grid');
 
         const img = document.createElement('img');
-        img.src=`../image/${item.image}`;
+        img.src=`../image/${item.img}`;
 
         cartGrid.appendChild(img);
 
@@ -30,7 +49,7 @@ function displayCart(cart) {
 
         const PriceDiv= document.createElement('div');
         PriceDiv.setAttribute('class','cart-item-price');
-        PriceDiv.innerText=item.originalPrice;
+        PriceDiv.innerText=item.price;
 
         const discountPriceDiv=document.createElement('div');
         discountPriceDiv.setAttribute('class', 'cart-item-d-price');
@@ -39,17 +58,18 @@ function displayCart(cart) {
         const deletebtn=document.createElement('button');
         deletebtn.innerText='Remove';
         deletebtn.onclick=deleteItemFromCart;
-        deletebtn.appendChild(discountPriceDiv);
+        
 
-        // detailDiv.appendChild(detailDiv1);
-        // detailDiv.appendChild(PriceDiv);
-        // detailDiv.appendChild(discountPriceDiv);
-        // cartGrid.appendChild(detailDiv);
+        detailDiv.appendChild(detailDiv1);
+        detailDiv.appendChild(PriceDiv);
+        detailDiv.appendChild(discountPriceDiv);
+        detailDiv.appendChild(deletebtn);
+       cartGrid.appendChild(detailDiv);
 
-        discountPriceDiv.appendChild(PriceDiv);
-        PriceDiv.appendChild(detailDiv1);
-        detailDiv1.appendChild(detailDiv);
-        detailDiv.appendChild(cartGrid);
+        // discountPriceDiv.appendChild(PriceDiv);
+        // PriceDiv.appendChild(detailDiv1);
+        // detailDiv1.appendChild(detailDiv);
+        // detailDiv.appendChild(cartGrid);
 
 
         cartParentDiv.appendChild(cartGrid);

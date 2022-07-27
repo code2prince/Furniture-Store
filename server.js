@@ -93,8 +93,29 @@ app.use(express.static(path.join(__dirname, 'client')))
 
     app.post('/addToCart', (request, response) =>{
         const cartItem = request.body;
+        // if item not present in cart make quantity =1
+        // if item already present in cart increase quantity by 1
+        let itemPresent=true;
+        let quantity=[];
 
-        cart.push(cartItem);
+        for(i=0;i<productList.length;i++){
+            if(productList[i].id!==cartItem.id){
+                itemPresent=false;
+                //console.log('item not Present')
+            }
+            cart.push(cartItem);
+
+            if(itemPresent===true){
+            //response.send={msg:'item Already Present'}
+            if(quantity[productList[i]]){
+                quantity[productList[i]]+=1;
+            }
+            cart.push(quantity);
+        }   
+        else
+        }
+
+       // cart.push(cartItem);
         response.send({msg: 'Item added to cart'});
         });
 

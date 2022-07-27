@@ -123,6 +123,7 @@ function displayProducts(productList) {
         iconCartSpan.setAttribute('data-id',productitem.id);
         iconCartSpan.setAttribute('data-name',productitem.name);
         iconCartSpan.setAttribute('data-price',productitem.price);
+       // iconCartSpan.setAttribute('data-originalPrice',productitem.originalPrice);
         iconCartSpan.setAttribute('data-image',productitem.image);
 
         const iconCart=document.createElement('i');
@@ -134,7 +135,8 @@ function displayProducts(productList) {
                 id: productitem.id,
                 productName: productitem.name,
                 price: productitem.price,
-                img: productitem.image
+               // originalPrice:productitem.originalPrice,
+                img: productitem.image,
             };
             sendDataToServer(item);
         });

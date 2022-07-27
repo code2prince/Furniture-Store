@@ -93,3 +93,15 @@ html {
   color: #aaaaaa;
   text-decoration: line-through;
 }
+.product-name{
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+.price{
+  font-size: 12px;
+  font-weight: bold;
+}
+.product-img{
+  width: 200px;
+}
