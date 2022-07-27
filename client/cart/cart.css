@@ -105,3 +105,28 @@ html {
 .product-img{
   width: 200px;
 }
+.quantity-icons{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+  padding: 3px;
+}
+
+.quantity-box{
+  display: grid;
+  grid-template-columns: 40px;
+}
+.reduce{
+  background-color: rgb(200, 68, 180);
+  
+}
+.reduce:hover{
+  cursor: pointer;
+}
+
+.increase{
+  background-color: greenyellow;
+}
+.increase:hover{
+  cursor: pointer;
+}

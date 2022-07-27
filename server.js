@@ -70,6 +70,7 @@ const productList = [
         originalPrice: '49,999',
         image: 'bed5.webp',
     },
+
 ];
 
 app.get('/getProductList', (request, response) => {
@@ -84,14 +85,14 @@ app.post('/gettingProduct', (request, response) => {
     response.send({ msg: 'product added successfully' })
 });
 
-
+let cart = [];
 
 app.get('/getCart', (request, response) => {
 
     response.send(cart);
 });
 
-let cart = [];
+
 app.post('/addToCart', (request, response) => {
     const cartItem = request.body;
     // if item not present in cart make quantity =1
@@ -112,6 +113,7 @@ app.post('/addToCart', (request, response) => {
             name: cartItem.productName,
             price: cartItem.price,
             img: cartItem.img,
+            originalPrice: cartItem.originalPrice,
             qty: 1
         }
         cart.push(cartWithQty);

@@ -21,7 +21,7 @@ function createProduct() {
         name: name,
         id: id,
         price: price,
-       // originalPrice: originalPrice,
+        //originalPrice: originalPrice,
     };
     const reqObject = {
         method: 'POST',
@@ -150,13 +150,15 @@ function displayProducts(productList) {
         buyNowBtn.setAttribute('data-id', productitem.id);
         buyNowBtn.setAttribute('data-name', productitem.name);
         buyNowBtn.setAttribute('data-price', productitem.price);
-        buyNowBtn.setAttribute('data-image', productitem.image);
+        buyNowBtn.setAttribute('data-originalPrice', productitem.originalPrice);
+       // buyNowBtn.setAttribute('data-image', productitem.image);
         buyNowBtn.innerText = "Buy-Now";
         buyNowBtn.addEventListener('click', function() {
             const item = {
                 id: productitem.id,
                 productName: productitem.name,
                 price: productitem.price,
+               // originalPrice:productitem.originalPrice,
                 img: productitem.image
             };
             sendDataToServerAndRedirect(item);

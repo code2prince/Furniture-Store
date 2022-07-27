@@ -42,9 +42,9 @@ function displayCart(cart) {
 
         const detailDiv=document.createElement('div');
 
-        const detailDiv1 = document.createElement('h1');
-        detailDiv1.setAttribute('class','cart-item-name');
-        detailDiv1.innerText=item.productName;
+        const nameDiv = document.createElement('h1');
+        nameDiv.setAttribute('class','cart-item-name');
+        nameDiv.innerText=item.name;
 
 
         const PriceDiv= document.createElement('div');
@@ -53,17 +53,45 @@ function displayCart(cart) {
 
         const discountPriceDiv=document.createElement('div');
         discountPriceDiv.setAttribute('class', 'cart-item-d-price');
-        discountPriceDiv.innerText=item.price;
+        discountPriceDiv.innerText=item.originalPrice;
 
         const deletebtn=document.createElement('button');
         deletebtn.innerText='Remove';
         deletebtn.onclick=deleteItemFromCart;
-        
+////////
+        const quantityIconDiv=document.createElement('div');
+        quantityIconDiv.setAttribute('class','quantity-icons');
 
-        detailDiv.appendChild(detailDiv1);
+        const reduceBtn=document.createElement('button');
+        reduceBtn.setAttribute('class','reduce');
+        reduceBtn.innerText='-';
+        reduceBtn.onclick=reduce;
+
+        const quantityBoxDiv=document.createElement('div');
+        quantityBoxDiv.setAttribute('class','quantity-box');
+        quantityBoxDiv.innerText=item.qty;
+
+        const increaseBtn=document.createElement('button');
+        increaseBtn.setAttribute('class','increase');
+        increaseBtn.innerText='+';
+        increaseBtn.onclick=increase;
+
+       
+//////
+
+        detailDiv.appendChild(nameDiv);
         detailDiv.appendChild(PriceDiv);
         detailDiv.appendChild(discountPriceDiv);
+    
+
+        quantityIconDiv.appendChild(reduceBtn);
+        quantityIconDiv.appendChild(quantityBoxDiv);
+        quantityIconDiv.appendChild(increaseBtn);
+        detailDiv.appendChild(quantityIconDiv);
+
         detailDiv.appendChild(deletebtn);
+        
+     
        cartGrid.appendChild(detailDiv);
 
         // discountPriceDiv.appendChild(PriceDiv);
@@ -77,44 +105,13 @@ function displayCart(cart) {
     });
 
 }
-// getkart();
-//////////////////////////////
-        // const imgCart=document.createElement('div');
-        // imgCart.setAttribute('class', 'imgcart');
-        //     const div = document.createElement('div');
-        //     const h1 = document.createElement('h1');
-        //     const h2 = document.createElement('h2');
-        //     const h3 = document.createElement('h3');
-        //     const img = document.createElement('img');
-        //     img.src = `../image/${item.img}`;
+function reduce(e){
 
-        //     cartParentDiv.appendChild(img);
+};
 
-        // var deletebtn = document.createElement('button');
-        // deletebtn.setAttribute('data-id', item.id);
-        // deletebtn.innerText = 'Remove-Item';
-        // deletebtn.onclick = deleteItemFromCart;
+function increase(e){
 
-        // // const id=document.createElement('id')
-
-        // h1.innerText = item.productName;
-        // h2.innerText = item.id;
-        // h3.innerText = item.price;
-        // div.append(h1);
-        // div.append(h2);
-        // div.append(h3);
-        // div.append(deletebtn);
-        // // id.innerText=item.id;
-        // // div.append(id);
-
-        
-        // cartParentDiv.appendChild(div);
-//     });
-
-
-
-// }
-
+};
 
 
 function deleteItemFromCart(e) {
