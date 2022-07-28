@@ -114,10 +114,11 @@ html {
 
 .quantity-box{
   display: grid;
-  grid-template-columns: 40px;
+  grid-template-columns: 30px;
+  background-color: #d7dda9
 }
 .reduce{
-  background-color: rgb(200, 68, 180);
+  background-color: rgb(222, 125, 125);
   
 }
 .reduce:hover{

@@ -126,7 +126,7 @@ app.post('/addToCart', (request, response) => {
 // delete cart items
 
 app.delete('/cartDelete', (request, response) => {
-    // const name=request.body; 
+    //const name=request.body; 
     console.log("request.body", request.body);
 
     const filteredCard = cart.filter(c => c.id !== parseInt(request.body.id));
