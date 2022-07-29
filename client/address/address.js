@@ -45,7 +45,7 @@ function saveForm() {
     if(name && mobile && address){
         console.log('customer address', name,mobile,alternate,pincode,address,city,state,landmark,selectedAddressType);
 
-        window.location.href ="http://localhost:4000/cart/cart.html";
+        window.location.href ="http://localhost:4000/payment/payment.html";
     }else{
         alert('Please provide full Address Details');
     }
