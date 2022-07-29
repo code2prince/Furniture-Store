@@ -1,3 +1,5 @@
+//const { response } = require("express");
+
 function getkart() {
     fetch("http://localhost:4000/getCart")
         .then(response => response.json())
@@ -105,14 +107,68 @@ function displayCart(cart) {
     });
 
 }
-function reduce(e){
 
+function reduce(e){
+    const qty={quantity:e.target.dataset.qty};
+    const requestObject={
+        method:'PUT',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(qty)
+    };
+    const reducePromise= fetch('http://localhost:4000/reduceItem',requestObject)
+    reducePromise
+    .then(response=>response.json())
+    .then(result=>{
+        console.log(result);
+        getkart();
+    });
 };
 
 function increase(e){
+    const qty={quantity:e.target.dataset.qty};
+    const requestObject={
+        method:'PUT',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify(qty)
+    };
+    const reducePromise= fetch('http://localhost:4000/increaseItem',requestObject)
+    reducePromise
+    .then(response=>response.json())
+    .then(result=>{
+        console.log(result);
+        getkart();
+    });
 
 };
 
+function orderPlace() {
+   window.location.href= 'http://localhost:4000/address/address.html';
+}
+
+
+// function next(){
+//     //dynmically gen address form
+//     // append it to target div
+//     const inputBox= document.createElement('input');
+//     const targetDiv=document.getElementById('address-section');
+//     targetDiv.appendChild(inputBox);
+  
+
+//     const paymentBtn=document.createElement('button');
+//     paymentBtn.innerText='Place Order';
+//     paymentBtn.onclick=showPaymentForm;
+//     targetDiv.appendChild(paymentBtn);
+
+
+
+// };
+
+// function showPaymentForm(){
+//     const input=document.createElement('input');
+//     const targetDiv=document.getElementById('payment-section');
+//     targetDiv.appendChild(input);
+
+// };
 
 function deleteItemFromCart(e) {
     const id = {id : e.target.dataset.id};

@@ -87,7 +87,19 @@ app.post('/gettingProduct', (request, response) => {
 
 let cart = [];
 
+
 app.get('/getCart', (request, response) => {
+
+    let total=0;
+    for(i=0; i<cart.length; i++){
+        const totalPrice= parseInt(cart.price) *cart.qty;
+        total+=totalPrice;
+        console.log("total:" ,total);
+        }
+
+
+
+
 
     response.send(cart);
 });
@@ -136,6 +148,28 @@ app.delete('/cartDelete', (request, response) => {
 });
 
 
+app.put('/reduceItem',(request,response)=>{
+    const reduce=request.body;
+    console.log("request.body", request.body);
+    cart.shift(reduce.cartWithQty-1);
+    response.send({msg:'item reduced'})
+
+});
+app.put('/increaseItem',(request,response)=>{
+    const increase=request.body;
+    console.log("request.body", request.body);
+    cart.push(increase.cartWithQty+1)
+    response.send({msg:'item increased'})
+
+});
+
+const AddressList=[];
+
+app.post('/customerAddress', (req,res)=>{
+    const add= req.body;
+    AddressList.push(add);
+    res.send({msg:'address sucessfully recieved'});
+});
 
 
 

@@ -131,3 +131,9 @@ html {
 .increase:hover{
   cursor: pointer;
 }
+.order-btn{
+  background-color: rgb(255, 119, 16);
+  color:aliceblue;
+  cursor: pointer;
+  padding: 10px;
+}
