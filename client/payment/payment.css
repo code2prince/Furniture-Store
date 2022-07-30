@@ -14,7 +14,7 @@ html {
   }
   .header-grid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     justify-content: space-between;
   }
   
@@ -57,20 +57,34 @@ html {
   button{
     background-color: rgb(255, 130, 34);
     color:aliceblue;
+    border: tomato;
     cursor: pointer;
+    margin: 10px;
+    margin-left: 120px;
     padding: 10px;
   }
   .input-row{
     display: grid;
-    grid-template-columns: 100px 300px;
-    grid-gap:10px;
+    grid-template-columns: 90px 150px;
+    grid-gap:2px;
+    margin-left: 20px;
     margin-bottom: 7px;
     
   }
-  .d-flex{
-    margin-top: 15px;
-  }
+  /* .d-flex{
+    margin-top: 10px;
+  } */
   .header-name{
     margin-top: 15px;
   }
+  .payment-header{
+    display: flex;
+    justify-content: center;
+    background-color: #f0b728;
+    color: bisque;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+  }
+
   

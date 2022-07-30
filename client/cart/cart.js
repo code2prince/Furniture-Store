@@ -78,6 +78,11 @@ function displayCart(cart) {
         increaseBtn.innerText='+';
         increaseBtn.onclick=increase;
 
+        // const totalDiv=document.createElement('div');
+        // totalDiv.setAttribute('class', 'total-price');
+        // totalDiv.innerText=item.total;
+        // cartParentDiv.appendChild(totalDiv);
+
        
 //////
 
@@ -104,6 +109,7 @@ function displayCart(cart) {
 
         cartParentDiv.appendChild(cartGrid);
 
+        
     });
 
 }

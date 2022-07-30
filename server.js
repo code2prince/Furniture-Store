@@ -17,58 +17,86 @@ const productList = [
     {
         id: '1',
         name: 'wooden bed',
-        price: '39,999',
+        price: '39999',
         originalPrice: '59,999',
         image: 'bed4.webp',
     },
     {
         id: '2',
         name: ' king wooden bed ',
-        price: '49,999',
+        price: '49999',
         originalPrice: '69,999',
         image: 'bed3.webp',
     },
     {
         id: '3',
         name: ' queen wooden bed ',
-        price: '29,999',
+        price: '29999',
         originalPrice: '49,999',
         image: 'bed1.webp',
     },
     {
         id: '4',
         name: ' queen wooden bed ',
-        price: '25,999',
+        price: '25999',
         originalPrice: '49,999',
         image: 'bed6.jpg',
     },
     {
         id: '5',
         name: ' Teak wooden bed ',
-        price: '45,999',
+        price: '45999',
         originalPrice: '49,999',
         image: 'bed5.webp',
     },
     {
         id: '6',
         name: ' Teak wooden bed ',
-        price: '12,999',
+        price: '12999',
         originalPrice: '19,999',
         image: 'bed7.jpg',
     },
     {
         id: '7',
         name: '  wooden bed ',
-        price: '25,999',
+        price: '25999',
         originalPrice: '39,999',
         image: 'bed2.webp',
     },
     {
-        id: '5',
+        id: '8',
         name: ' Teak wooden bed ',
-        price: '45,999',
+        price: '45999',
         originalPrice: '49,999',
         image: 'bed5.webp',
+    },
+    {
+        id: '9',
+        name: 'Royal 4 chair Dinning ',
+        price: '39999',
+        originalPrice: '49,999',
+        image: 'dinning1.jpg',
+    },
+    {
+        id: '10',
+        name: ' Dinning 6 chairs ',
+        price: '29999',
+        originalPrice: '49,999',
+        image: 'dinning2.webp',
+    },
+    {
+        id: '11',
+        name: ' Dinning 4 seater ',
+        price: '19999',
+        originalPrice: '29,999',
+        image: 'dinning.jpg',
+    },
+    {
+        id: '12',
+        name: ' Grand Dinning 10 seater ',
+        price: '45999',
+        originalPrice: '69,999',
+        image: 'dinning4.jpg',
     },
 
 ];
@@ -92,15 +120,12 @@ app.get('/getCart', (request, response) => {
 
     let total=0;
     for(i=0; i<cart.length; i++){
-        const totalPrice= parseInt(cart.price) *cart.qty;
+        
+        const totalPrice= parseInt(cart[i].price)*cart[i].qty;
         total+=totalPrice;
-        console.log("total:" ,total);
+       
         }
-
-
-
-
-
+        console.log("total:" ,total);
     response.send(cart);
 });
 
@@ -171,7 +196,11 @@ app.post('/customerAddress', (req,res)=>{
     res.send({msg:'address sucessfully recieved'});
 });
 
+// const paymentList=[];
 
+// app.get('/getPayment', (req,res)=>{
+//     res.send(paymentList);
+// });
 
 app.listen(4000, function () {
     console.log('Server is running on port 4000')

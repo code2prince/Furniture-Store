@@ -21,12 +21,12 @@
             <div class="header-name">
                 <h3>A to Z Furniture</h3>
             </div>
-            <div>
+            <!-- <div>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
-            </div>
+            </div> -->
 
             <div class="website-menu">
                 <div>
@@ -56,11 +56,22 @@
         </marquee>
     </div>
 
-    <h3> Payment:</h3>
+    <div class='payment-header'><h3> Payment:</h3></div>
+    <div id="payment-type">
+        <div class="payment">
+            <h5>Credit-Card/ Debit-Cart</h5>
+            <div class="input-row">Card No:<input id="number" type="text" placeholder="Enter Card Number"> </div>
+            <div class="input-row">
+                <label for="date">Card Expiry:</label>
+                <input type="date" id="date" name="cardExpiry">
+            </div>
+            <div class="input-row">CVV: <input id="cvv" type="password" placeholder="CVV"></div>
+        </div>
+    </div>
 
     
     
-    <button class="pay-now" id="pay" onclick="pay()"> Pay </button>
+    <button class="pay-now" id="pay" onclick="pay()"> Pay-Now </button>
 <script src="payment.js"></script>
 </body>
 
