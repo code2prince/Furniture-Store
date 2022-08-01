@@ -59,6 +59,7 @@ function displayCart(cart) {
 
         const deletebtn=document.createElement('button');
         deletebtn.innerText='Remove';
+        deletebtn.setAttribute('data-id', item.id);
         deletebtn.onclick=deleteItemFromCart;
 ////////
         const quantityIconDiv=document.createElement('div');
@@ -66,6 +67,7 @@ function displayCart(cart) {
 
         const reduceBtn=document.createElement('button');
         reduceBtn.setAttribute('class','reduce');
+        reduceBtn.setAttribute('data-id', item.id);
         reduceBtn.innerText='-';
         reduceBtn.onclick=reduce;
 
@@ -75,6 +77,7 @@ function displayCart(cart) {
 
         const increaseBtn=document.createElement('button');
         increaseBtn.setAttribute('class','increase');
+        increaseBtn.setAttribute('data-id', item.id);
         increaseBtn.innerText='+';
         increaseBtn.onclick=increase;
 
@@ -115,11 +118,14 @@ function displayCart(cart) {
 }
 
 function reduce(e){
-    const qty={quantity:e.target.dataset.qty};
+    const prodIDObj=  {
+        id:  e.target.dataset.id
+    };
+
     const requestObject={
         method:'PUT',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(qty)
+        body:JSON.stringify(prodIDObj)
     };
     const reducePromise= fetch('http://localhost:4000/reduceItem',requestObject)
     reducePromise
@@ -131,13 +137,16 @@ function reduce(e){
 };
 
 function increase(e){
-    const qty={quantity:e.target.dataset.qty};
+    const prodIDObj = {
+        id:  e.target.dataset.id
+    };
+
     const requestObject={
         method:'PUT',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify(qty)
+        body:JSON.stringify(prodIDObj)
     };
-    const reducePromise= fetch('http://localhost:4000/increaseItem',requestObject)
+    const reducePromise= fetch('http://localhost:4000/increaseItem', requestObject)
     reducePromise
     .then(response=>response.json())
     .then(result=>{
@@ -190,7 +199,6 @@ function deleteItemFromCart(e) {
     .then(result =>{
         // success
         console.log(result);
-        debugger;
         getkart();
     });
 

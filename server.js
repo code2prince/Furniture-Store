@@ -166,7 +166,7 @@ app.delete('/cartDelete', (request, response) => {
     //const name=request.body; 
     console.log("request.body", request.body);
 
-    const filteredCard = cart.filter(c => c.id !== parseInt(request.body.id));
+    const filteredCard = cart.filter(c => c.id !== request.body.id);
     console.log('filteredCard ', filteredCard);
     cart = filteredCard;
     response.send({ msg: 'Item deleted' });
@@ -174,16 +174,40 @@ app.delete('/cartDelete', (request, response) => {
 
 
 app.put('/reduceItem',(request,response)=>{
-    const reduce=request.body;
-    console.log("request.body", request.body);
-    cart.shift(reduce.cartWithQty-1);
+    const prodIDObj = request.body;
+    
+    const updatedCart = cart.map(item => {
+        if(item.id === prodIDObj.id) {
+            return {
+                ...item,
+                qty: item.qty - 1,
+            }
+        } 
+        return item;
+    }).filter(a => a.qty !== 0)
+    
+
+    cart = updatedCart;
     response.send({msg:'item reduced'})
 
 });
 app.put('/increaseItem',(request,response)=>{
-    const increase=request.body;
-    console.log("request.body", request.body);
-    cart.push(increase.cartWithQty+1)
+    const prodIDObj = request.body;
+    
+    const updatedCart = cart.map(item => {
+        if(item.id === prodIDObj.id) {
+            return {
+                ...item,
+                qty: item.qty + 1,
+            }
+        } 
+        return item;
+    });
+
+    console.log(updatedCart);
+
+    cart = updatedCart;
+    
     response.send({msg:'item increased'})
 
 });
