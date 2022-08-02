@@ -32,14 +32,40 @@ function createUser() {
         body: JSON.stringify(user)
     };
 
-    const userPromise = fetch('http://localhost:3000/signUpUser', reqObject)
+    const userPromise = fetch('http://localhost:4000/signUpUser', reqObject)
     userPromise.then(response => response.json()).then(result => {
 
         if (result.isRegistered === true) {
             alert("you are successfully Registered ");
+            window.location.href="http://localhost:4000/login/login.html";
         }
         else {
             alert(result.msg);
         }
     });
+}
+
+function getUserlist() {
+    fetch('http://localhost:4000/getUserlist')
+    .then(response => response.json())
+    .then(result => {
+        userList = result;
+        printUser(userList);
+    });
+}
+
+function printUser(users) {
+    
+    const userlistContainer = document.getElementById('userlist');
+    userlistContainer.innerHTML = '';
+
+
+    users.forEach(user => {
+        const h1 = document.createElement('h1');
+        h1.innerText = user.name;
+        userlistContainer.appendChild(h1);
+    });
+
+
+    
 }

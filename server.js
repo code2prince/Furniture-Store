@@ -226,6 +226,82 @@ app.post('/customerAddress', (req,res)=>{
 //     res.send(paymentList);
 // });
 
+const userList = [
+    {
+        email: "prince@gmail.com",
+        mobile: "8873091666",
+        name: "Prince Sharma",
+        password: "12345",
+    },
+
+    {
+        email: "raj@gmail.com",
+        mobile: "8873091777",
+        name: "Rajeev Sharma",
+        password: "12345",
+       
+    },
+    {
+        email: "amit@gmail.com",
+        mobile: "8873091888",
+        name: "amit SHARMA",
+        password: "12345",
+       
+    },
+];
+// signup
+
+app.get('/getUserlist', (req, res) => {
+    res.send(userList);
+});
+
+app.post('/signUpUser', (req, res) => {
+    const user = req.body;
+    console.log(userList.length);
+    let userExist = false;
+    for (i = 0; i < userList.length; i++) {
+        if (userList[i].email === user.email) {
+            userExist = true;
+            console.log('user exist');
+        }
+        
+    }
+    if (userExist === true) {
+         const response={
+            msg: 'User already exist, please try with another email account',
+            isRegistered: false,
+         }
+         res.send(response);
+    }
+    else {
+        userList.push(user);
+        const response = { msg: 'User successfully added' , isRegistered: true, userid:user.email};
+        res.send(response);
+    }
+
+});
+
+
+
+//Login
+
+app.post('/loginFeature', (req, res) => {
+    const user = req.body;
+
+    var loginSuccess = false;
+    for(var i=0; i<userList.length; i++) {
+        if(userList[i].email === user.email  && userList[i].password === user.password ){
+            loginSuccess = true;
+        } 
+    }
+    if(loginSuccess === true) {
+        res.send({loginSuccess:true ,userid:user.email})
+    } else {
+        res.send({loginSuccess:false})
+    }
+});
+
+
 app.listen(4000, function () {
     console.log('Server is running on port 4000')
 });
