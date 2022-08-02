@@ -212,7 +212,10 @@ app.put('/increaseItem',(request,response)=>{
 
 });
 
-const AddressList=[];
+const AddressList=[
+    {id: 1,   useremail:  "prince@gmail.com", address: 'chennai'},
+    {id: 2,   useremail:  "prince@gmail.com", address: 'siwan'}
+];
 
 app.post('/customerAddress', (req,res)=>{
     const add= req.body;
@@ -320,3 +323,19 @@ app.listen(4000, function () {
 });
 
 
+
+
+// -- create
+// CREATE TABLE USER (
+//   id INTEGER PRIMARY KEY,
+//   email TEXT NOT NULL,
+//   password TEXT NOT NULL,
+//   name TEXT NOT NULL
+// );
+
+// -- insert
+// INSERT INTO USER VALUES (1, 'prince@mail.com', '12345', 'Prince');
+// INSERT INTO USER VALUES (2, 'amit@mail.com', '12345', 'Amit');
+// INSERT INTO USER VALUES (3, 'rohit@mail.com', '12345', 'Rohit');
+
+// SELECT * FROM USER WHERE dept = 'Sales';

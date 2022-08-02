@@ -22,9 +22,12 @@ function Login(){
         loginPromise.then(response=>response.json())
         .then(result => {
             if(result.loginSuccess === false) {
-                alert('login failed, please try again');
+                alert('login fail');
             }
             else{
+                sessionStorage.setItem('login', true);
+                sessionStorage.setItem('userid', result.userid);
+                
                 window.location.href='http://localhost:4000/cart/cart.html';
             }
         });  

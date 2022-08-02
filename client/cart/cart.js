@@ -158,22 +158,14 @@ function increase(e){
 
 function orderPlace() {
     
-    
-        fetch('http://localhost:4000/getLogin')
-        .then(response => response.json())
-        .then(result => {
-         
-      
-            debugger;
-        if(result.userLogin === false) {
-           window.location.href='http://localhost:4000/login/login.html';
-        }
-        else{
-            window.location.href= 'http://localhost:4000/address/address.html';
-        }
-    
-
-    });
+   if( sessionStorage.getItem('login') === 'true') {
+    // send to paymnet page
+    window.location.href= 'http://localhost:4000/address/address.html';
+   }
+   else {
+    // send to login page
+    window.location.href='http://localhost:4000/login/login.html';
+   }
   
 };
 
