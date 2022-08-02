@@ -157,8 +157,25 @@ function increase(e){
 };
 
 function orderPlace() {
-   window.location.href= 'http://localhost:4000/address/address.html';
-}
+    
+    
+        fetch('http://localhost:4000/getLogin')
+        .then(response => response.json())
+        .then(result => {
+         
+      
+            debugger;
+        if(result.userLogin === false) {
+           window.location.href='http://localhost:4000/login/login.html';
+        }
+        else{
+            window.location.href= 'http://localhost:4000/address/address.html';
+        }
+    
+
+    });
+  
+};
 
 
 // function next(){

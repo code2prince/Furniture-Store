@@ -285,6 +285,16 @@ app.post('/signUpUser', (req, res) => {
 
 //Login
 
+app.get('/getLogin',(req,res)=>{
+    var userLogin=false;
+    if(userLogin === true) {
+        res.send({userLogin:true })
+    } else 
+        res.send({userLogin:false})
+    
+    
+});
+
 app.post('/loginFeature', (req, res) => {
     const user = req.body;
 
