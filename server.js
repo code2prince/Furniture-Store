@@ -286,7 +286,10 @@ app.post('/signUpUser', (req, res) => {
 //Login
 
 app.get('/getLogin',(req,res)=>{
+
     var userLogin=false;
+  
+    ////logic////
     if(userLogin === true) {
         res.send({userLogin:true })
     } else 
