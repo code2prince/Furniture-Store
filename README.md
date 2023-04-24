@@ -1,4 +1,4 @@
 # Furniture-Store
 Furniture-Store is for wooden furniture 
 
-## This is based on Javascript, HTML CSS and NOde js
+## This is based on Javascript, HTML CSS and Node js
